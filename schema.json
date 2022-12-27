@@ -1,0 +1,84 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "budibase-object-store-field",
+    "friendlyName": "Object Store Field",
+    "description": "A Budibase field component for uploading to s3 or budibase minio instance from a form field.",
+    "icon": "Text",
+    "settings": [
+      {
+        "type": "text",
+        "key": "label",
+        "label": "Label"
+      },
+      {
+        "type": "field/longform",
+        "key": "field",
+        "label": "Field"
+      },
+      {
+        "type": "text",
+        "key": "value",
+        "label": "Default Value",
+        "dependsOn": "field"
+      },
+      {
+        "type": "select",
+        "label": "File Types",
+        "key": "fileType",
+        "options": [
+          "Any",
+          "Image",
+          "Audio",
+          "Video",
+          "Custom"
+        ],
+        "defaultValue": "Any"
+      },
+      {
+        "type": "text",
+        "key": "customFileType",
+        "label": "Custom Type",
+        "placeholder": "e.g. image/png, image/*",
+        "dependsOn": {
+          "setting": "fileType",
+          "value": "Custom"
+        }
+      },
+      {
+        "type": "boolean",
+        "key": "multiple",
+        "label": "Multiple Files?"
+      },
+      {
+        "type": "select",
+        "label": "Store As",
+        "key": "store",
+        "options": [
+          "Budibase Minio Object",
+          "AWS S3 Object"
+        ],
+        "defaultValue": "Budibase Object"
+      },
+      {
+        "type": "dataSource/s3",
+        "label": "S3 Data Source",
+        "key": "s3DataSource",
+        "dependsOn": {
+          "setting": "store",
+          "value": "AWS S3 Object"
+        }
+      },
+      {
+        "type": "text",
+        "label": "Bucket Name",
+        "key": "s3Bucket",
+        "dependsOn": {
+          "setting": "store",
+          "value": "AWS S3 Object"
+        }
+      }
+    ]
+  }
+}
