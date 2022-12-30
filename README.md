@@ -87,7 +87,6 @@ budi plugins --watch
                 "Principal": "*",
                 "Action": [
                   "s3:PutObject",
-                  "s3:PutObjectAcl",
                   "s3:GetObject"
                 ],
                 "Resource": "arn:aws:s3:::<bucket-name>/*"
