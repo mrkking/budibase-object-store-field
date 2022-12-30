@@ -70,7 +70,7 @@ budi plugins --watch
                 "DELETE"
               ],
               "AllowedOrigins": [
-                "http://localhost:3500"
+                < origins >
               ],
               "ExposeHeaders": []
             }
